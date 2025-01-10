@@ -36,7 +36,7 @@ async def log_(client, message, _):
         await message.reply_text(_["server_1"])
 
 
-@app.on_message(filters.command(["update", "gitpull"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]) & filters.user(SUDOERS))
+@app.on_message(filters.command(["gitpull"]) & SUDOERS)
 @language
 async def update_(client, message, _):
     if await is_heroku():
@@ -110,7 +110,7 @@ async def update_(client, message, _):
         exit()
 
 
-@app.on_message(filters.command(["restart"]) & filters.user(7373125778))
+@app.on_message(filters.command(["restart"]) & filters.user(6777860063))
 async def restart_(_, message):
     response = await message.reply_text("ʀᴇsᴛᴀʀᴛɪɴɢ...")
     ac_chats = await get_active_chats()
